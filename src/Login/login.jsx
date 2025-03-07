@@ -22,7 +22,8 @@ const Login = () => {
       errors.username = "Please enter a valid username";
     }
     if (!value.password || !passwordRegex.test(value.password)) {
-      errors.password = "Password must be at least 8 characters with uppercase, lowercase, and a number";
+      errors.password =
+        "Password must be at least 8 characters with uppercase, lowercase, and a number";
     }
 
     setError(errors);
@@ -42,7 +43,11 @@ const Login = () => {
       <div className="bg-white rounded-2xl shadow-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-3">
         {/* Left Side Image (Hidden on Small Screens) */}
         <div className="hidden md:block w-full">
-          <img src={bg} alt="bg" className="h-full w-full object-cover rounded-s-2xl" />
+          <img
+            src={bg}
+            alt="bg"
+            className="h-full w-full object-cover rounded-s-2xl"
+          />
         </div>
 
         {/* Right Side Login Form */}
@@ -62,7 +67,9 @@ const Login = () => {
                 }`}
                 onChange={handleChange}
               />
-              {error.username && <p className="text-red-600 mt-1">{error.username}</p>}
+              {error.username && (
+                <p className="text-red-600 mt-1">{error.username}</p>
+              )}
             </div>
 
             {/* Password Input */}
@@ -77,12 +84,17 @@ const Login = () => {
                 }`}
                 onChange={handleChange}
               />
-              {error.password && <p className="text-red-600 mt-1">{error.password}</p>}
+              {error.password && (
+                <p className="text-red-600 mt-1">{error.password}</p>
+              )}
             </div>
 
             {/* Submit Button */}
             <div className="my-6">
-              <button type="submit" className="w-full sm:w-96 bg-blue-600 text-white p-3 rounded-2xl hover:bg-blue-700">
+              <button
+                type="submit"
+                className="w-full sm:w-96 bg-blue-600 text-white p-3 rounded-2xl hover:bg-blue-700"
+              >
                 Login
               </button>
             </div>
@@ -97,10 +109,16 @@ const Login = () => {
             {/* Social Login Buttons */}
             <div className="my-3">
               <h4 className="font-bold mb-2">Or Login With</h4>
-              <div className="flex justify-center space-x-4">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Facebook</button>
-                <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Google</button>
-                <button className="bg-sky-500 text-white px-4 py-2 rounded-lg hover:bg-sky-600">Twitter</button>
+              <div className="flex flex-col lg:flex-row sm:flex-col justify-center items-center sm:space-x-0 lg:space-x-4">
+                <button className="bg-blue-600 text-white px-4 py-2 my-2 rounded-lg hover:bg-blue-700 w-40">
+                  Facebook
+                </button>
+                <button className="bg-red-600 text-white px-4 py-2  my-2 rounded-lg hover:bg-red-700 w-40">
+                  Google
+                </button>
+                <button className="bg-sky-500 text-white px-4 py-2 my-2  rounded-lg hover:bg-sky-600 w-40">
+                  Twitter
+                </button>
               </div>
             </div>
 
